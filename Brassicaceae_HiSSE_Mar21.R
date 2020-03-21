@@ -4,7 +4,7 @@ library(hisse)
 library(diversitree)
 
 ###Running HiSSE
-setwd("~/Desktop/Brassicaceae/ClusterJan12")
+setwd("/home/u6/cromanpa94/HiSSEBrassicaceae")
 
 ##Sampling fractions
 sfs<-list('Hohmann'=c(1-.433,.433), 'Wood'=c(1-0.3358,0.3358), 'dataset_specific'=NULL)
