@@ -10,7 +10,7 @@ setwd("/home/u6/cromanpa94/HiSSEBrassicaceae")
 sfs<-list('Hohmann'=c(1-.433,.433), 'Wood'=c(1-0.3358,0.3358), 'dataset_specific'=NULL)
 
 ##Function
-fit_SSE_Brassicaceae<-function(tree=tree2, data=data2, f=NULL){
+fit_SSE_Brassicaceae<-function(tree=tree2, data=data2, f=NULL, n.cores=28){
 
   tree2<-tree; ntree<-tree2
   nnls<-nnls.tree(cophenetic(ntree),ntree,rooted=TRUE)
@@ -128,7 +128,7 @@ fit_SSE_Brassicaceae<-function(tree=tree2, data=data2, f=NULL){
 
  best_model<-models[[which.min(Table$deltaAIC)]]
  
- bestrec <- MarginRecon(ntree, hdbin_first, f=sap, hidden.states=TRUE, pars=best_model$solution, n.cores=4)
+ bestrec <- MarginRecon(ntree, hdbin_first, f=sap, hidden.states=TRUE, pars=best_model$solution, n.cores=n.cores)
  
  res<-list('sap'=sap, 'Models'=models, 'Data'= Table, 'Best'=best_model, 'ASR'=bestrec)
  
