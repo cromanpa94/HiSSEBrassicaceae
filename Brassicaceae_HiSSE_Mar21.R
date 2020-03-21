@@ -2,6 +2,8 @@ library(ape)
 library(geiger)
 library(hisse)
 library(diversitree)
+library(phytools)
+library(phangorn)
 
 ###Running HiSSE
 setwd("/home/u6/cromanpa94/HiSSEBrassicaceae")
