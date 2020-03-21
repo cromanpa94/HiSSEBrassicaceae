@@ -125,10 +125,7 @@ fit_SSE_Brassicaceae<-function(tree=tree2, data=data2, f=NULL, n.cores=28){
   AIC=c(b1$AIC,b2$AIC,b3$AIC,b4$AIC,h1$AIC,h2$AIC,h3$AIC,h4$AIC,h4_ND$AIC,h5$AIC,h6$AIC,cid2$AIC,
         cid4$AIC))
 
- Table$deltaAIC<- akaike.weights(Table$AIC)$deltaAIC
- Table$weights<- akaike.weights(Table$AIC)$weights
-
- best_model<-models[[which.min(Table$deltaAIC)]]
+ best_model<-models[[which.min(Table$AIC)]]
  
  bestrec <- MarginRecon(ntree, hdbin_first, f=sap, hidden.states=TRUE, pars=best_model$solution, n.cores=n.cores)
  
